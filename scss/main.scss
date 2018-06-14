@@ -201,6 +201,9 @@ a {
 	}
 }
 
+.search-form {
+	display: none;
+}
 
 .header-holder {
 	overflow: hidden;
@@ -431,6 +434,21 @@ a {
 					opacity: 1;
 					visibility: visible;
 				}
+
+				.img-holder {
+					.collection-logo {
+						color: #fff;
+          				background-color: #d357d3;
+          				z-index: 9999;
+
+          				h2 {
+          					&:after {
+          						content: '';
+            					background-color: #fff; 
+          					}
+          				}
+					}
+				}
 		    }
 
 		    .img-holder {
@@ -454,7 +472,7 @@ a {
 			    padding: 20px;
 			    transition: opacity .3s, visibility .3s;
 
-		    	.collection-logo {
+		    	/*.collection-logo {
 					color: #fff;
 					background-color: #d357d3;
 
@@ -467,7 +485,7 @@ a {
   							background-color: #fff;
 						}
 					}
-				}
+				}*/
 
 				.name-collection {
 					position: absolute;
@@ -1117,5 +1135,6 @@ a {
 		}
 	}
 }
+
 
 @import "media.scss";

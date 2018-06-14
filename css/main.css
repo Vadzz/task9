@@ -908,6 +908,9 @@ a {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); } }
 
+.search-form {
+  display: none; }
+
 .header-holder {
   overflow: hidden;
   margin-bottom: 8px; }
@@ -1043,6 +1046,13 @@ a {
     .newcollection-section .new-collection .collection-holder:hover .hidden-block {
       opacity: 1;
       visibility: visible; }
+    .newcollection-section .new-collection .collection-holder:hover .img-holder .collection-logo {
+      color: #fff;
+      background-color: #d357d3;
+      z-index: 9999; }
+      .newcollection-section .new-collection .collection-holder:hover .img-holder .collection-logo h2:after {
+        content: '';
+        background-color: #fff; }
     .newcollection-section .new-collection .collection-holder .img-holder img {
       width: 100%;
       vertical-align: top;
@@ -1060,16 +1070,21 @@ a {
       padding: 20px;
       -webkit-transition: opacity .3s, visibility .3s;
       -o-transition: opacity .3s, visibility .3s;
-      transition: opacity .3s, visibility .3s; }
-      .newcollection-section .new-collection .collection-holder .hidden-block .collection-logo {
-        color: #fff;
-        background-color: #d357d3; }
-        .newcollection-section .new-collection .collection-holder .hidden-block .collection-logo h2 {
-          margin: 0 10px 10px 10px;
-          position: relative; }
-          .newcollection-section .new-collection .collection-holder .hidden-block .collection-logo h2:after {
-            content: '';
-            background-color: #fff; }
+      transition: opacity .3s, visibility .3s;
+      /*.collection-logo {
+					color: #fff;
+					background-color: #d357d3;
+
+					h2 {
+						margin: 0 10px 10px 10px;
+ 						position: relative;
+
+						&:after {
+							content: '';
+  							background-color: #fff;
+						}
+					}
+				}*/ }
       .newcollection-section .new-collection .collection-holder .hidden-block .name-collection {
         position: absolute;
         top: 55%;
@@ -1579,6 +1594,36 @@ a {
     bottom: 55px;
     width: auto;
     right: 10%; }
+  .search-form {
+    display: inline-block;
+    vertical-align: top;
+    float: right; }
+    .search-form .search-field {
+      background-color: #fff;
+      /*background-image:url(img/search-icon.png);*/
+      background-position: 10px center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      border: 2px solid #eee;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 32px;
+      margin-right: 5px;
+      padding: 5px 6px 3px 36px;
+      position: relative;
+      -webkit-transition: width 400ms ease, background 400ms ease;
+      -o-transition: width 400ms ease, background 400ms ease;
+      transition: width 400ms ease, background 400ms ease;
+      width: 0; }
+      .search-form .search-field:focus {
+        background-color: #fff;
+        border: 2px solid #eee;
+        cursor: text;
+        outline: 0;
+        width: 190px;
+        border-radius: 20px; }
+  input[type="search"] {
+    -webkit-appearance: textfield; }
   .header-holder {
     margin-bottom: 28px; }
     .header-holder .main-menu nav ul:first-child li:nth-child(2) {
@@ -1848,8 +1893,10 @@ a {
     margin: 0;
     padding: 0;
     list-style: none; }
+  .search-form .search-field:focus {
+    width: 240px; }
   .header-holder {
-    margin-bottom: 20px; }
+    margin-bottom: 15px; }
     .header-holder .main-menu nav ul:last-child {
       display: inline-block;
       vertical-align: top; }
@@ -1859,12 +1906,14 @@ a {
     .header-holder .menu {
       overflow: hidden;
       margin-bottom: 5px;
-      display: block; }
+      display: block;
+      font-size: 15px;
+      line-height: 1.1333333; }
       .header-holder .menu nav {
         float: right; }
         .header-holder .menu nav ul {
           /*@extend %listreset;*/
-          margin: 0;
+          /*margin: 0;*/
           padding: 0;
           list-style: none;
           display: inline-block;
@@ -1881,11 +1930,28 @@ a {
               background-color: #d357d3;
               width: 2px;
               height: 100%; }
+            .header-holder .menu nav ul:first-child ul {
+              display: none;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              background: #eee;
+              padding: 0;
+              z-index: 99999; }
+              .header-holder .menu nav ul:first-child ul li {
+                float: none;
+                width: 200px; }
           .header-holder .menu nav ul li {
             display: inline-block;
             vertical-align: top;
             color: #000;
-            padding: 5px 1px; }
+            padding: 5px 1px;
+            position: relative;
+            float: left; }
+            .header-holder .menu nav ul li:hover {
+              background: #f6f6f6; }
+            .header-holder .menu nav ul li:hover > ul {
+              display: block; }
             .header-holder .menu nav ul li a {
               color: #000; }
               .header-holder .menu nav ul li a:hover {
@@ -1943,24 +2009,24 @@ a {
       line-height: 1.125; } }
 
 @media (min-width: 1200px) {
+  .search-form .search-field:focus {
+    width: 300px; }
   .header-holder {
-    margin-bottom: 0; }
+    position: relative;
+    margin-bottom: 0px; }
     .header-holder .logo {
       position: absolute;
-      left: 15px;
-      top: 0; }
+      left: -3px;
+      top: 3px; }
     .header-holder .main-menu {
       margin-bottom: 4px; }
-    .header-holder .menu nav ul li {
-      padding: 5px; }
-    .header-holder .icon-menu {
-      padding: 10px 0; }
-      .header-holder .icon-menu nav {
-        float: right;
-        display: block; }
-        .header-holder .icon-menu nav ul li:first-child a i, .header-holder .icon-menu nav ul li:nth-child(2) a i {
-          padding: 5px; }
+    .header-holder .menu {
+      font-size: 16px; }
+      .header-holder .menu nav ul li {
+        padding: 5px; }
   .slider-section {
     display: block; }
     .slider-section .sliders .col-slider {
-      min-height: 600px; } }
+      min-height: 600px; }
+  .search-form {
+    margin-bottom: 5px; } }
