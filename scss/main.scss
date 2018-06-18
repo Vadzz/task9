@@ -113,7 +113,7 @@ a {
 	position: relative;
 	float: right;
 	z-index: 9990;
-	margin-right: 5px;
+	margin-bottom: 5px;
   	background-color: #383838;
   	border-radius: 50%;
 }
@@ -205,8 +205,13 @@ a {
 	display: none;
 }
 
+.clearfix {
+    height: 0px;
+    clear: both;
+}
+
 .header-holder {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	margin-bottom: 8px;
 
 	.logo {
@@ -221,14 +226,15 @@ a {
 
     .main-menu {
 	    background-color: #383838;
-	    overflow: hidden;
+	    /*overflow: hidden;*/
+	    /*float: right;*/
 	    padding: 8px 0;
 	    margin-bottom: 10px;
-
+		text-align: right;
 	    nav {
-		    float: right;
-		    text-align: right;
-		    max-width: 900px;
+		    
+		    
+		    /*max-width: 900px;*/
 
 		    ul {
 		    	@extend %listreset;
@@ -298,11 +304,11 @@ a {
 	}
 
 	.icon-menu {
-	    overflow: hidden;
-	    padding: 13px 0;
+	    /*overflow: hidden;
+	    padding: 13px 0;*/
 	    display: none;
 
-	    nav {
+	    /*nav {
 		   float: right;
 		   display: block;
 
@@ -367,7 +373,7 @@ a {
 					}
 		   		}
 		   	}
-		}
+		}*/
 	}
 }
 
@@ -763,7 +769,7 @@ a {
 					h2 {
 						font-size: 19px;
 						line-height: 1.105263;
-						margin-bottom: 10px;
+						margin: 0 0 10px;
 					} 
 
 					p {

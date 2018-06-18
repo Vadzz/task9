@@ -733,7 +733,7 @@ body {
   font-size: 14px;
   line-height: 1.14285714; }
 
-.nav-drop ul, .header-holder .main-menu nav ul, .header-holder .icon-menu nav ul, .video-sliders .sliders .video-holder .video-text ul, .news-section .news-holder aside .news article ul, .contact-section .contact .contact-holder:last-child ul, .copyright-section ul {
+.nav-drop ul, .header-holder .main-menu nav ul, .video-sliders .sliders .video-holder .video-text ul, .news-section .news-holder aside .news article ul, .contact-section .contact .contact-holder:last-child ul, .copyright-section ul {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -813,7 +813,7 @@ a {
   position: relative;
   float: right;
   z-index: 9990;
-  margin-right: 5px;
+  margin-bottom: 5px;
   background-color: #383838;
   border-radius: 50%; }
 
@@ -911,8 +911,12 @@ a {
 .search-form {
   display: none; }
 
+.clearfix {
+  height: 0px;
+  clear: both; }
+
 .header-holder {
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin-bottom: 8px; }
   .header-holder .logo {
     position: absolute;
@@ -922,13 +926,13 @@ a {
       max-width: 80%; }
   .header-holder .main-menu {
     background-color: #383838;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    /*float: right;*/
     padding: 8px 0;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    text-align: right; }
     .header-holder .main-menu nav {
-      float: right;
-      text-align: right;
-      max-width: 900px; }
+      /*max-width: 900px;*/ }
       .header-holder .main-menu nav ul {
         display: inline-block;
         vertical-align: top; }
@@ -963,41 +967,75 @@ a {
   .header-holder .menu {
     display: none; }
   .header-holder .icon-menu {
-    overflow: hidden;
-    padding: 13px 0;
-    display: none; }
-    .header-holder .icon-menu nav {
-      float: right;
-      display: block; }
-      .header-holder .icon-menu nav ul li {
-        display: inline-block;
-        vertical-align: top;
-        color: #000;
-        padding: 0 1px; }
-        .header-holder .icon-menu nav ul li a {
-          color: #000; }
-          .header-holder .icon-menu nav ul li a:hover {
-            color: #d357d3; }
-        .header-holder .icon-menu nav ul li:first-child a i, .header-holder .icon-menu nav ul li:nth-child(2) a i {
-          border-radius: 50%;
-          padding: 12px; }
-        .header-holder .icon-menu nav ul li:first-child a i {
-          color: #000;
-          border: 1px solid #000;
-          background-color: #fff; }
-        .header-holder .icon-menu nav ul li:nth-child(2) a i {
-          color: #fff;
-          background-color: #d357d3; }
-        .header-holder .icon-menu nav ul li:last-child {
-          position: relative; }
-          .header-holder .icon-menu nav ul li:last-child:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -2px;
-            width: 1px;
-            background-color: #d357d3; }
+    /*overflow: hidden;
+	    padding: 13px 0;*/
+    display: none;
+    /*nav {
+		   float: right;
+		   display: block;
+
+			ul {
+		   		@extend %listreset;
+
+		   		li {
+				    display: inline-block;
+				    vertical-align: top;
+				    color: #000;
+				    padding: 0 1px;
+
+				    a {
+					    color: #000;
+
+					    &:hover {
+					    	color: #d357d3;
+					    }
+					}
+
+					&:first-child,
+					&:nth-child(2) {
+						a {
+							i {
+								border-radius: 50%;
+							    padding: 12px;
+							}
+						}
+					}
+
+					&:first-child {
+						a {
+							i {
+								color: #000;
+								border: 1px solid #000;
+								background-color: #fff;
+							}
+						}
+					}
+
+					&:nth-child(2) {
+						a {
+							i {
+								color: #fff;
+								background-color: #d357d3;
+							}
+						}
+					}
+
+					&:last-child {
+					    position: relative;
+
+					    &:before {
+						    content: '';
+						    position: absolute;
+						    top: 0;
+						    bottom: 0;
+						    left: -2px;
+						    width: 1px;
+						    background-color: #d357d3;
+						}
+					}
+		   		}
+		   	}
+		}*/ }
 
 .slider-section {
   display: none; }
@@ -1290,7 +1328,7 @@ a {
         .news-section .news-holder .sliders article .col h2 {
           font-size: 19px;
           line-height: 1.105263;
-          margin-bottom: 10px; }
+          margin: 0 0 10px; }
         .news-section .news-holder .sliders article .col p {
           margin: 0 0 10px; }
         .news-section .news-holder .sliders article .col a {
@@ -1531,6 +1569,9 @@ a {
   body {
     font-size: 16px;
     line-height: 1.125; }
+  .nav-opener {
+    margin-bottom: 0;
+    margin-right: 5px; }
   .slick-dots {
     bottom: 20px;
     width: auto;
@@ -1548,15 +1589,72 @@ a {
   .header-holder .icon-menu {
     display: inline-block;
     vertical-align: top;
+    max-width: 150px;
+    margin-left: auto;
     float: right; }
-    .header-holder .icon-menu nav ul li:last-child {
-      display: none; }
+    .header-holder .icon-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .header-holder .icon-menu ul li {
+        display: inline-block;
+        vertical-align: top;
+        color: #000;
+        padding: 0 1px;
+        /*a {
+              color: #000;
+              display: block;
+              width: 43px;
+              height: 43px;
+              position: relative;
+              border-radius: 50%;
+
+              i {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+              &:hover {
+                color: #d357d3;
+              }
+            }*/ }
+        .header-holder .icon-menu ul li:last-child {
+          display: none; }
+        .header-holder .icon-menu ul li:first-child a {
+          /*border: 1px solid #000;*/
+          display: block;
+          width: 43px;
+          height: 43px;
+          position: relative;
+          border-radius: 50%;
+          background: #d357d3; }
+          .header-holder .icon-menu ul li:first-child a:hover {
+            background-color: #383838; }
+            .header-holder .icon-menu ul li:first-child a:hover i {
+              color: #d357d3; }
+          .header-holder .icon-menu ul li:first-child a i {
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+        .header-holder .icon-menu ul li:nth-child(2) {
+          padding-top: 12px; }
+          .header-holder .icon-menu ul li:nth-child(2) a:hover {
+            color: #d357d3; }
+          .header-holder .icon-menu ul li:nth-child(2) a i {
+            color: #fff;
+            background-color: #d357d3; }
   .company-section {
     padding-top: 20px; }
     .company-section .company-holder .st-logo {
       max-width: 38%; }
   .newcollection-section {
-    padding-top: 40px; }
+    padding-top: 25px; }
     .newcollection-section .new-collection .collection-holder .hidden-block .name-collection h1 {
       font-size: 25px;
       line-height: 1.08;
@@ -1620,21 +1718,35 @@ a {
         border: 2px solid #eee;
         cursor: text;
         outline: 0;
-        width: 190px;
+        width: 160px;
         border-radius: 20px; }
   input[type="search"] {
     -webkit-appearance: textfield; }
   .header-holder {
-    margin-bottom: 28px; }
+    margin-bottom: 33px; }
     .header-holder .main-menu nav ul:first-child li:nth-child(2) {
       display: inline-block;
       vertical-align: top; }
     .header-holder .main-menu nav ul:nth-child(2) li:last-child {
       display: inline-block;
       vertical-align: top; }
-    .header-holder .icon-menu nav ul li:last-child {
-      display: inline-block;
-      vertical-align: top; }
+    .header-holder .icon-menu {
+      max-width: 180px; }
+      .header-holder .icon-menu ul li:last-child {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 12px;
+        position: relative; }
+        .header-holder .icon-menu ul li:last-child:before {
+          content: '';
+          position: absolute;
+          top: 15px;
+          bottom: 0px;
+          left: -5px;
+          width: 1px;
+          background-color: #d357d3; }
+      .header-holder .icon-menu ul li a:hover {
+        color: #d357d3; }
   .slider-section {
     display: block; }
     .slider-section .sliders .col-slider {
@@ -1889,7 +2001,7 @@ a {
           padding: 5px 20px; } }
 
 @media (min-width: 1024px) {
-  .nav-drop ul, .header-holder .main-menu nav ul, .header-holder .icon-menu nav ul, .video-sliders .sliders .video-holder .video-text ul, .news-section .news-holder aside .news article ul, .contact-section .contact .contact-holder:last-child ul, .copyright-section ul {
+  .nav-drop ul, .header-holder .main-menu nav ul, .video-sliders .sliders .video-holder .video-text ul, .news-section .news-holder aside .news article ul, .contact-section .contact .contact-holder:last-child ul, .copyright-section ul {
     margin: 0;
     padding: 0;
     list-style: none; }
@@ -1904,58 +2016,57 @@ a {
       font-size: 16px;
       line-height: 1.125; }
     .header-holder .menu {
-      overflow: hidden;
-      margin-bottom: 5px;
       display: block;
+      margin-left: auto;
+      margin-bottom: 5px;
+      max-width: 685px;
       font-size: 15px;
       line-height: 1.1333333; }
-      .header-holder .menu nav {
-        float: right; }
-        .header-holder .menu nav ul {
-          /*@extend %listreset;*/
-          /*margin: 0;*/
+      .header-holder .menu nav ul {
+        /*@extend %listreset;*/
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+        vertical-align: top;
+        background-color: #eee; }
+        .header-holder .menu nav ul:first-child {
+          position: relative;
+          margin-right: 10px; }
+          .header-holder .menu nav ul:first-child:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -8px;
+            background-color: #d357d3;
+            width: 2px;
+            height: 100%; }
+        .header-holder .menu nav ul ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: #eee;
           padding: 0;
-          list-style: none;
+          z-index: 99999; }
+          .header-holder .menu nav ul ul li {
+            float: none;
+            width: 200px; }
+        .header-holder .menu nav ul li {
           display: inline-block;
           vertical-align: top;
-          background-color: #eee; }
-          .header-holder .menu nav ul:first-child {
-            position: relative;
-            margin-right: 10px; }
-            .header-holder .menu nav ul:first-child:after {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: -8px;
-              background-color: #d357d3;
-              width: 2px;
-              height: 100%; }
-            .header-holder .menu nav ul:first-child ul {
-              display: none;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              background: #eee;
-              padding: 0;
-              z-index: 99999; }
-              .header-holder .menu nav ul:first-child ul li {
-                float: none;
-                width: 200px; }
-          .header-holder .menu nav ul li {
-            display: inline-block;
-            vertical-align: top;
-            color: #000;
-            padding: 5px 1px;
-            position: relative;
-            float: left; }
-            .header-holder .menu nav ul li:hover {
-              background: #f6f6f6; }
-            .header-holder .menu nav ul li:hover > ul {
-              display: block; }
-            .header-holder .menu nav ul li a {
-              color: #000; }
-              .header-holder .menu nav ul li a:hover {
-                color: #d357d3; }
+          color: #000;
+          padding: 5px 1px;
+          position: relative;
+          float: left; }
+          .header-holder .menu nav ul li:hover {
+            background: #f6f6f6; }
+          .header-holder .menu nav ul li:hover > ul {
+            display: block; }
+          .header-holder .menu nav ul li a {
+            color: #000; }
+            .header-holder .menu nav ul li a:hover {
+              color: #d357d3; }
   .slider-section {
     display: block; }
     .slider-section .sliders .col-slider {
@@ -2021,6 +2132,7 @@ a {
     .header-holder .main-menu {
       margin-bottom: 4px; }
     .header-holder .menu {
+      max-width: 777px;
       font-size: 16px; }
       .header-holder .menu nav ul li {
         padding: 5px; }
